@@ -1,6 +1,5 @@
 package mood.green.springframeworkmongodocker.domain;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
