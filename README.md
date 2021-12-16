@@ -22,7 +22,7 @@ Deploying Spring Boot and MongoDB as Containers Using Docker and Docker Compose
 
 * if all good access your api 
 
-<pre>curl --location --request POST <span class="pl-s"><span class="pl-pds">'</span>http://localhost:8181/books<span class="pl-pds">'</span></span> \
+<pre>curl --location --request POST <span class="pl-s"><span class="pl-pds">'</span>http://localhost:7777/books<span class="pl-pds">'</span></span> \
 --header <span class="pl-s"><span class="pl-pds">'</span>Content-Type: application/json<span class="pl-pds">'</span></span> \
 --data-raw <span class="pl-s"><span class="pl-pds">'</span>{</span>
 <span class="pl-s">    "id":1,</span>
