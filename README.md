@@ -26,12 +26,12 @@ Deploying Spring Boot and MongoDB as Containers Using Docker and Docker Compose
 --header <span class="pl-s"><span class="pl-pds">'</span>Content-Type: application/json<span class="pl-pds">'</span></span> \
 --data-raw <span class="pl-s"><span class="pl-pds">'</span>{</span>
 <span class="pl-s">    "id":1,</span>
-<span class="pl-s">    "bookName":"corejava",</span>
-<span class="pl-s">    "authorName":"Basant"</span>
+<span class="pl-s">    "bookName":"JavaFx",</span>
+<span class="pl-s">    "authorName":"Anton"</span>
 <span class="pl-s">}<span class="pl-pds">'</span></span></pre>
 
 <ul class="contains-task-list">
-<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> login to mongo terminal to verify records <strong><code>docker exec -it javatechiemongodb bash</code></strong></li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> login to mongo terminal to verify records <strong><code>docker exec -it greenmoodmongodb bash</code></strong></li>
 <li>type mongo and enter</li>
 <li>show dbs</li>
 <li>use book</li>
@@ -52,18 +52,18 @@ Deploying Spring Boot and MongoDB as Containers Using Docker and Docker Compose
 
 <pre><span class="pl-ent">version</span>: <span class="pl-s"><span class="pl-pds">"</span>3<span class="pl-pds">"</span></span>
 <span class="pl-ent">services</span>:
-  <span class="pl-ent">javatechiemongodb</span>:
+  <span class="pl-ent">greenmoodmongodb</span>:
     <span class="pl-ent">image</span>: <span class="pl-s">mongo:latest</span>
-    <span class="pl-ent">container_name</span>: <span class="pl-s"><span class="pl-pds">"</span>javatechiemongodb<span class="pl-pds">"</span></span>
+    <span class="pl-ent">container_name</span>: <span class="pl-s"><span class="pl-pds">"</span>greenmoodmongodb<span class="pl-pds">"</span></span>
     <span class="pl-ent">ports</span>:
       - <span class="pl-c1">27017:27017</span>
   <span class="pl-ent">springboot-mongodb</span>:
     <span class="pl-ent">image</span>: <span class="pl-s">springboot-mongodb:1.0</span>
     <span class="pl-ent">container_name</span>: <span class="pl-s">springboot-mongodb</span>
     <span class="pl-ent">ports</span>:
-      - <span class="pl-c1">8080:8080</span>
+      - <span class="pl-c1">7777:7777</span>
     <span class="pl-ent">links</span>:
-      - <span class="pl-s">javatechiemongodb</span></pre>
+      - <span class="pl-s">greenmoodmongodb</span></pre>
 
 <ul class="contains-task-list">
 <li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" checked=""> navigate to resources folder:</li>
