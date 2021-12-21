@@ -11,7 +11,7 @@ Deploying Spring Boot and MongoDB as Containers Using Docker and Docker Compose
 * **docker run mongo image docker run -d -p 27017:27017 --name greenmoodmongodb mongo:latest**
 
 
-* dockerize spring boot application: **docker build -t springboot-mongodb:1.0 .**
+* dockerize spring boot application: **docker build -t springboot-mongodb:1.0 .  **
 
 
 * run spring boot docker image and link that container to mongo container docker run -p 7777:7777 --name springboot-mongodb --link greenmoodmongodb:mongo -d springboot-mongodb:1.0
