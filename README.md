@@ -5,16 +5,16 @@
 Deploying Spring Boot and MongoDB as Containers Using Docker and Docker Compose
 
 ### Steps docker commands
-* pull mongo image from docker hub docker pull mongo:latest
+* **pull mongo image from docker hub docker pull mongo:latest**
 
 
-* docker run mongo image docker run -d -p 27017:27017 --name greenmoodmongodb mongo:latest
+* **docker run mongo image docker run -d -p 27017:27017 --name greenmoodmongodb mongo:latest**
 
 
-* dockerize spring boot application docker build -t springboot-mongodb:1.0 .
+* dockerize spring boot application: **docker build -t springboot-mongodb:1.0 .**
 
 
-* run spring boot docker image and link that container to mongo container docker run -p 8181:8181 --name springboot-mongodb --link greenmoodmongodb:mongo -d springboot-mongodb:1.0
+* run spring boot docker image and link that container to mongo container docker run -p 7777:7777 --name springboot-mongodb --link greenmoodmongodb:mongo -d springboot-mongodb:1.0
 
 * check docker running containers docker ps it should display two container ids
 
@@ -22,7 +22,7 @@ Deploying Spring Boot and MongoDB as Containers Using Docker and Docker Compose
 
 * if all good access your api 
 
-<pre>curl --location --request POST <span class="pl-s"><span class="pl-pds">'</span>http://localhost:8181/books<span class="pl-pds">'</span></span> \
+<pre>curl --location --request POST <span class="pl-s"><span class="pl-pds">'</span>http://localhost:7777/books<span class="pl-pds">'</span></span> \
 --header <span class="pl-s"><span class="pl-pds">'</span>Content-Type: application/json<span class="pl-pds">'</span></span> \
 --data-raw <span class="pl-s"><span class="pl-pds">'</span>{</span>
 <span class="pl-s">    "id":1,</span>
